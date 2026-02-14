@@ -6,7 +6,7 @@ description = "GSW (Gentry-Sahai-Waters) lattice-based fully homomorphic encrypt
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/10d9e/gsw-rs"
 documentation = "https://docs.rs/gsw-rs"
-keywords = ["cryptography", "homomorphic-encryption", "fhe", "lattice", "lwe", "gsw"]
+keywords = ["cryptography", "homomorphic-encryption", "fhe", "lattice", "gsw"]
 categories = ["cryptography"]
 
 [dependencies]
