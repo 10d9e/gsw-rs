@@ -71,4 +71,4 @@ Tests cover encrypt/decrypt, homomorphic operations (both seeded and non-determi
 ## References
 
 - Gentry, Sahai, Waters: "Homomorphic Encryption from Learning With Errors"
-- [The GSW FHE Scheme](https://docs.sotazk.org/docs/gsw_fhe_scheme)
+- [The GSW FHE Scheme](https://eprint.iacr.org/2013/340.pdf)
