@@ -151,6 +151,9 @@ fn main() {
     println!("Evaluation key: {} encrypted bits", ek.encryptions.len());
 
     println!("Bootstrapping a ciphertext...");
+
+    // timing the bootstrapping
+
     let ct_to_bootstrap = homomorphic_mult(&params, &ct1, &ct1);
     let msg_before = decrypt(&sk, &ct_to_bootstrap);
     let val_clear = gsw_rs::bootstrap::decrypt_linear_part_clear(&sk, &ct_to_bootstrap);
@@ -160,7 +163,11 @@ fn main() {
         "  Input: val={}, scale={}, noisy_decrypt={}",
         val_clear, scale, msg_before
     );
+    let start_time = std::time::Instant::now();
     let ct_bootstrapped = bootstrap(&params, &ct_to_bootstrap, &ek);
+    let end_time = std::time::Instant::now();
+    let duration = end_time.duration_since(start_time);
+    println!("Time taken to bootstrap the ciphertext: {:?}", duration);
     let msg_after = decrypt(&sk, &ct_bootstrapped);
     let val_bootstrap = gsw_rs::bootstrap::decrypt_linear_part_clear(&sk, &ct_bootstrapped);
     println!(
